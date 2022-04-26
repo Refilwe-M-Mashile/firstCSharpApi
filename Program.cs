@@ -1,4 +1,6 @@
+using static GreetApi.Controllers.HelloWorldController;
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 
@@ -21,5 +23,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGet("/getB", () => new GreetApi.Controllers.HelloWorldController().getBuses());
 
 app.Run();
